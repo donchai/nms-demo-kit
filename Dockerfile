@@ -11,7 +11,7 @@ ARG NGINX_CERT
 ARG NGINX_KEY
 
 # Initial setup
-RUN apt-get update && apt-get install -y -q apt-utils && \
+RUN apt-get install -y -q apt-utils && apt-get update && \
         DEBIAN_FRONTEND=noninteractive apt-get install -y -q build-essential git nano curl jq wget gawk \
                 nginx lsb-release rsyslog systemd apt-transport-https ca-certificates netcat
 
