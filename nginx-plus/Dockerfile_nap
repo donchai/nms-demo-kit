@@ -20,7 +20,6 @@ RUN apt-get update && apt-get install -y apt-utils && apt-get install -y apt-tra
 # Agent installation
 RUN bash -c 'curl -k $NMS_URL/install/nginx-agent | sh' && echo "Agent installed from NMS"
 
-
 # Download and add the NGINX signing keys:
 RUN wget https://cs.nginx.com/static/keys/nginx_signing.key && apt-key add nginx_signing.key \
     && wget https://cs.nginx.com/static/keys/app-protect-security-updates.key && apt-key add app-protect-security-updates.key
