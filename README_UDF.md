@@ -40,9 +40,9 @@ chmod 755 ./scripts/*
 #Download NGINX Plus trial license and put nginx-repo.crt and nginx-repo.key in nginx-plus folder
 cp nginx-repo.* nginx-plus/
 
-#Build NMS (NGINX Instance Manager, API Connectivity Manager) container image
+#Build NMS (NGINX Instance Manager, API Connectivity Manager, App Protect WAF compiler) container image
 #Example build with the latest release
-sudo ./scripts/buildNMS.sh -t nginx-nms -i -C nginx-plus/nginx-repo.crt -K nginx-plus/nginx-repo.key -A -W
+sudo ./scripts/buildNMS.sh -t nginx-nms -i -C nginx-plus/nginx-repo.crt -K nginx-plus/nginx-repo.key -A -W -P v4.2.0
 
 #Or build with specific version
 #You may edit Dockerfile to specify the .deb package version for the required modules
