@@ -37,6 +37,8 @@ RUN wget -P /etc/apt/apt.conf.d https://cs.nginx.com/static/files/90pkgs-nginx
 # Update the repository and install the most recent version of the NGINX App Protect WAF package (which includes NGINX Plus):
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y app-protect
 
+RUN apt-cache policy app-protect
+
 RUN apt-get install -y "nginx-plus-module-njs"
 
 # Forward request logs to Docker log collector:
